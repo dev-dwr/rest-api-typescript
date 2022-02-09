@@ -1,0 +1,13 @@
+1. yarn init
+2. yarn add express zod config cors express mongoose pino pino-pretty dayjs bcrypt jsonwebtoken lodash nanoid
+3. yarn add @types/body-parser @types/config @types/cors @types/express @types/node @types/pino @types/bcrypt @types/jsonwebtoken @types/lodash @types/nanoid ts-node-dev typescript -D
+4. in package.json add scripts depend and dev script
+5. add tsconfig.ts file: npx tsc --init 
+6. in tsconfig.ts add in "compilerOptions" property of "outDir": "build"
+
+
+Used:
+Zod 
+
+
+async functions returns Promise<givenType> always
