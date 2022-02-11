@@ -1,11 +1,11 @@
 import {
   findProduct,
   findAndUpdateProduct,
-} from "./../service/product.service";
+} from "../service/product.service";
 import {
   CreateProductInput,
   UpdateProductInput,
-} from "./../schema/product.schema";
+} from "../schema/product.schema";
 import { Request, Response } from "express";
 import { createProduct, deleteProduct } from "../service/product.service";
 

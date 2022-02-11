@@ -1,4 +1,4 @@
-import { createUserSessionHandler } from "./../controller/session.controller";
+import { createUserSessionHandler } from "../controller/session.controller";
 import * as UserService from "../service/user.service";
 import * as SessionService from "../service/session.service";
 import mongoose from "mongoose";

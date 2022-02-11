@@ -1,10 +1,10 @@
-import { verifyJwt } from './../utils/jwt.utils';
+import { verifyJwt } from '../utils/jwt.utils';
 import { FilterQuery, UpdateQuery } from "mongoose";
 import SessionModel, { SessionDocument } from "../models/session.model";
 import {get} from "lodash";
 import { findUser } from './user.service';
 import config from "config";
-import { signJwt } from './../utils/jwt.utils';
+import { signJwt } from '../utils/jwt.utils';
 
 export const createSession = async (userId: string, userAgent: string) => {
   const session = await SessionModel.create({

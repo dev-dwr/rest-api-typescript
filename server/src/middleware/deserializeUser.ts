@@ -1,4 +1,4 @@
-import { reIssueAccessToken } from './../service/session.service';
+import { reIssueAccessToken } from '../service/session.service';
 import { Request, Response, NextFunction } from "express";
 import { get } from "lodash";
 import { verifyJwt } from "../utils/jwt.utils";

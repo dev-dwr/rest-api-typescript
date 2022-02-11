@@ -1,6 +1,6 @@
-import { signJwt } from "./../utils/jwt.utils";
-import { createSession, findSessions, updateSession } from "./../service/session.service";
-import { validatePassword } from "./../service/user.service";
+import { signJwt } from "../utils/jwt.utils";
+import { createSession, findSessions, updateSession } from "../service/session.service";
+import { validatePassword } from "../service/user.service";
 import { Request, Response } from "express";
 import config from "config";
 

@@ -1,0 +1,4 @@
+1. bootstrapped application: yarn create next-app <name> --typescript
+
+2. Installing dependencies:
+yarn add axios swr react-hook-form zod @hookform/resolvers

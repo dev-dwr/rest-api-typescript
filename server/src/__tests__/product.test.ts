@@ -1,5 +1,5 @@
-import { signJwt } from "./../utils/jwt.utils";
-import { createProduct } from "./../service/product.service";
+import { signJwt } from "../utils/jwt.utils";
+import { createProduct } from "../service/product.service";
 import supertest from "supertest";
 import createServer from "../utils/server";
 import { MongoMemoryServer } from "mongodb-memory-server";
@@ -12,14 +12,14 @@ const sampleProductPayload = {
   user: userId,
   title: "Sample title",
   description:
-    "Designed for first-time DSLR owners who want impressive results straight out of the box, capture those magic moments no matter your level with the EOS",
+    "Designed for first-time owners who want impressive results straight out of the box, capture those magic moments no matter your level with the EOS",
   price: 69.69,
   image: "https://i.imgur.com/QlRphfQ.jpg",
 };
 const sampleUserPayload = {
   _id: userId,
   email: "dawid@gmail.com",
-  name: "dawid rymar",
+  name: "david rym",
 };
 
 describe("product", () => {
@@ -73,7 +73,7 @@ describe("product", () => {
           __v: 0,
           _id: expect.any(String),
           createdAt: expect.any(String),
-          description: "Designed for first-time DSLR owners who want impressive results straight out of the box, capture those magic moments no matter your level with the EOS",
+          description: "Designed for first-time owners who want impressive results straight out of the box, capture those magic moments no matter your level with the EOS",
           image: "https://i.imgur.com/QlRphfQ.jpg",
           price: 69.69,
           productId: expect.any(String),
