@@ -7,7 +7,8 @@ This is sample of TypeScript REST API with JWT Authentication.
 * ExpressJS - web framework for Node.js
 * MongoDB and Mongoose - noSQL Database and library that creates a connection between MongoDB and the Express.
 * Zod - schema validation
-
+* Jest - JS testing framework maintained  by Facebook
+* Supertest - library for testing http
 ## Prerequisites
 1. Running instance of docker(preferably Docker)
 ```docker
