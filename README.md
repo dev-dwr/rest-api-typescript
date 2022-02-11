@@ -16,11 +16,12 @@ docker run --name mongodb -p 27017:27017 -d mongo
 ```
 2. Package manager such as NPM or Yarn
 
-3. NodeJS version and higher 14
+3. NodeJS version 14 and higher 
 ## Used Concepts
 * REST API principals (CRUD and HTTP methods)
 * JWT & refresh tokens
 * Request validation by using middleware
+* Testing with Jest
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
