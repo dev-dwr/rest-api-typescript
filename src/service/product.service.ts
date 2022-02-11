@@ -1,13 +1,12 @@
 import { UpdateQuery } from "mongoose";
 import { FilterQuery, QueryOptions } from "mongoose";
-import { DocumentDefinition } from "mongoose";
-import ProductModel, { ProductDocument } from "../models/product.model";
+import ProductModel, { ProductDocument, ProductInput } from "../models/product.model";
 /*
 Pipe (|) is used to separate each type, so for example number | string | boolean 
 is the type of a value that can be a number, a string, or a boolean.
 */
 export const createProduct = async (
-  input: DocumentDefinition<Omit<ProductDocument, "createdAt" | "updatedAt">>
+  input: ProductInput
 ) => {
   return ProductModel.create(input);
 };

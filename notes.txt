@@ -5,9 +5,16 @@
 5. add tsconfig.ts file: npx tsc --init 
 6. in tsconfig.ts add in "compilerOptions" property of "outDir": "build"
 
-
-Used:
-Zod 
+7.Testing: yarn add supertest jest ts-jest @types/jest @types/supertest -D
+8. Initialize jest config file: yarn ts-jest config:init
+9. add mongo db memory server yarn add mongodb-memory-server"
 
 
 async functions returns Promise<givenType> always
+
+
+git diff > changed-code.patch - to create code patch of changes required to change something in code
+
+git apply (file-name).patch in order to apply changes inside .patch file
+
+
