@@ -1,7 +1,7 @@
 # TypeScript REST API
 This is sample of TypeScript REST API with JWT Authentication.
 
-## Technologies
+## Technologies Backend
 * Node.js - JS Runtime Environment
 * TypeScript - Static Typing JS
 * ExpressJS - web framework for Node.js
@@ -9,6 +9,16 @@ This is sample of TypeScript REST API with JWT Authentication.
 * Zod - schema validation
 * Jest - JS testing framework maintained  by Facebook
 * Supertest - library for testing http
+
+## Technologies Frontend
+* Next.js - enables React application Server Side Rendering functionalities, which put big emphasize on website performance
+* Axios - promised based http client 
+* Zod - schema and form validation
+* react-hook-form - react library for creating flexible form validation
+* SWR - react library for data fetching. SWR is a strategy to first return data from cache, then send the fetch request,
+and finally come with up-to-date data. With SWR, components will get a stream of data updates constantly and automatically.
+And the UI will be always fast and reactive.
+
 ## Prerequisites
 1. Running instance of docker(preferably Docker)
 ```docker
