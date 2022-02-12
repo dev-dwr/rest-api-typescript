@@ -30,6 +30,16 @@ const sampleSessionPayload = {
 };
 
 describe("user", () => {
+  describe("get user", () => {
+    describe("given the user who is not authorized", () => {
+      it("should return 403", async () => {
+        const { statusCode, body } = await supertest(app).get("/api/me");
+        expect(statusCode).toBe(403);
+        expect(body).toEqual({});
+      });
+    });
+  });
+
   describe("registration", () => {
     describe("given the username and password are valid", () => {
       it("should return user payload", async () => {
@@ -100,10 +110,9 @@ describe("user", () => {
             password: "dupa123",
           },
         };
-
         const send = jest.fn();
-        
-        const res = { send };
+        const cookie = jest.fn();
+        const res = { send, cookie };
 
         //@ts-ignore
         await createUserSessionHandler(req, res);
@@ -112,6 +121,7 @@ describe("user", () => {
           accessToken: expect.any(String),
           refreshToken: expect.any(String),
         });
+        expect(cookie).toBeCalled();
       });
     });
   });

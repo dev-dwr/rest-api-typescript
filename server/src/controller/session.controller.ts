@@ -24,7 +24,23 @@ export const createUserSessionHandler = async (req: Request, res: Response) => {
     { expiresIn: config.get<string>("refreshTokenTimeToLive") }
   );
   
+  res.cookie("accessToken", accessToken, {
+    maxAge: 9000000, // 15 minutes
+    httpOnly: true, //secure feature
+    domain: "localhost",
+    path: "/",
+    sameSite: "strict",
+    secure: false,
+  });
   
+  res.cookie("refreshToken", refreshToken, {
+    maxAge: 3.154e10, // 1y 
+    httpOnly: true, //secure feature
+    domain: "localhost",
+    path: "/",
+    sameSite: "strict",
+    secure: false,
+  });
   // return access and refresh token
   return res.send({accessToken, refreshToken});
 };

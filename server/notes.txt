@@ -7,8 +7,8 @@
 
 7.Testing: yarn add supertest jest ts-jest @types/jest @types/supertest -D
 8. Initialize jest config file: yarn ts-jest config:init
-9. add mongo db memory server yarn add mongodb-memory-server"
-
+9. add mongo db memory server yarn add mongodb-memory-server
+10. add cookie parser yarn add cookie-parser, yarn add @types/cookie-parser -D(development dependency)
 
 async functions returns Promise<givenType> always
 

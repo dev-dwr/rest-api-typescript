@@ -13,3 +13,8 @@ export const createUserHandler = async (req: Request<{}, {}, CreateUserInput["bo
   }
 };
 
+
+export const getCurrentUser = async (req: Request, res: Response) => {
+  return res.send(res.locals.user);
+}
+

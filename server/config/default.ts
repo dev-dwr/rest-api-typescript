@@ -1,5 +1,6 @@
 export default {
   port: 1337,
+  origin: "http://localhost:3000",
   dbUri: "mongodb://localhost:27017/mongodb",
   saltWorkFactor: 10,
   accessTokenTimeToLive: "15m",

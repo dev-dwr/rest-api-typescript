@@ -1,4 +1,4 @@
-import { reIssueAccessToken } from '../service/session.service';
+import { reIssueAccessToken } from "../service/session.service";
 import { Request, Response, NextFunction } from "express";
 import { get } from "lodash";
 import { verifyJwt } from "../utils/jwt.utils";
@@ -8,11 +8,11 @@ const deserializeUser = async (
   res: Response,
   next: NextFunction
 ) => {
-  const accessToken = get(req, "headers.authorization", "").replace(
-    /^Bearer\s/,
-    ""
-  );  
-  const refreshToken = get(req, "headers.x-refresh");
+  const accessToken =
+    get(req, "cookies.accessToken") ||
+    get(req, "headers.authorization", "").replace(/^Bearer\s/, "");
+  
+    const refreshToken = get(req, "cookies.refreshToken") || get(req, "headers.x-refresh");
 
   if (!accessToken) {
     return next();
@@ -20,16 +20,24 @@ const deserializeUser = async (
 
   const { decoded, expired } = verifyJwt(accessToken);
 
-  if(decoded){
-      res.locals.user = decoded;
-      return next();
+  if (decoded) {
+    res.locals.user = decoded;
+    return next();
   }
 
-  if(expired && refreshToken){
-    const newAccessToken = await reIssueAccessToken({refreshToken});
-    if(newAccessToken){
+  if (expired && refreshToken) {
+    const newAccessToken = await reIssueAccessToken({ refreshToken });
+    if (newAccessToken) {
       res.setHeader("x-access-token", newAccessToken);
-    } 
+      res.cookie("accessToken", newAccessToken, {
+        maxAge: 9000000, // 15 minutes
+        httpOnly: true, //secure feature
+        domain: "localhost",
+        path: "/",
+        sameSite: "strict",
+        secure: false,
+      });
+    }
 
     const result = verifyJwt(newAccessToken as string);
     res.locals.user = result.decoded;
@@ -38,6 +46,5 @@ const deserializeUser = async (
 
   return next();
 };
-
 
 export default deserializeUser;
