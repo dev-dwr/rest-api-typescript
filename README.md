@@ -9,7 +9,7 @@ This is sample of TypeScript REST API with JWT Authentication.
 * Zod - schema validation
 * Jest - JS testing framework maintained  by Facebook
 * Supertest - library for testing http
-
+* Google oAuth2 - Google SSO with oAuth2 protocol
 ## Technologies Frontend
 * Next.js - enables React application Server Side Rendering functionalities, which put big emphasize on website performance
 * Axios - promised based http client 
