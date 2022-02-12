@@ -11,6 +11,7 @@ This is sample of TypeScript REST API with JWT Authentication.
 * Supertest - library for testing http
 * Google oAuth2 - Google SSO with oAuth2 protocol
 * Prometheus - for measuring express api performance 
+* Swagger - tool for documenting API
 
 ## Technologies Frontend
 * Next.js - enables React application Server Side Rendering functionalities, which put big emphasize on website performance
@@ -33,8 +34,8 @@ docker run --name mongodb -p 27017:27017 -d mongo
 1. ```cd server```
 2. ```yarn init```
 3. ```yarn dev```
-On ```http://localhost:9100``` is hosted Prometheus. In order to get information about metrics. You have to send
-a get request on  ```http://localhost:9100/metrics```
+4. On ```http://localhost:9100``` is hosted Prometheus. In order to get information about metrics. You have to send
+a get request on  ```http://localhost:9100/metrics```. On ```http://localhost:1337/docs``` you have documentation using swagger interface
 ## Running frontend
 1. ```cd frontend```
 2. ```yarn init```
@@ -46,7 +47,7 @@ a get request on  ```http://localhost:9100/metrics```
 * Testing API(Middleware, Controller, Service) with Supertest and Mongodb-memory-server
 * Storing authentication credentials inside cookies instead local storage.
 * Creating Login and Registration Page and integration between frontend and backend
-
+* Using OpenAPI to define API documentation
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 

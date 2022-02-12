@@ -13,6 +13,9 @@
 because ts we need to add yarn add @types/response-time -D (development dependency)
 async functions returns Promise<givenType> always
 
+12. Add swagger. First go to tsconfig.json and enable resolveJsonModule: true
+Install: yarn add swagger-jsdoc swagger-ui-express
+yarn add @types/swagger-jsdoc @types/swagger-ui-express -D
 
 git diff > changed-code.patch - to create code patch of changes required to change something in code
 

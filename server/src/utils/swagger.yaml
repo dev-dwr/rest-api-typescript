@@ -1,0 +1,123 @@
+openapi: 3.0.0
+info:
+  title: REST API Docs
+  version: 1.0.0
+security:
+  - bearerAuth: [] 
+paths:
+  /healthcheck:
+    get:
+      tags:
+      - healthcheck
+      description: Responds if the app is up and running
+      responses:
+        200:
+          description: App is up and running
+  /api/users:
+    post:
+      tags:
+      - User
+      summary: Register a user
+      requestBody:
+        required: true
+        content: 
+          application/json:
+            schema: 
+              $ref: "#/components/schemas/CreateUserInput"
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CreateUserResponse"
+        409:
+          description: Conflict
+        400:
+          description: Bad request
+  
+  /api/products/{productId}:
+    get:
+      tags:
+      - Products
+      summary: Get a single product by the productId
+      parameters:
+        - in: path
+          name: productId
+          description: The id of the product
+          required: true
+
+      responses:
+        200:
+          description: Success
+          content:
+            application//json:
+              schema:
+                $ref: "#/components/schemas/Product"
+        404:
+          description: Product not found
+
+
+components:
+  securitySchemes:
+    bearerAuth:            
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    Product:
+      type: object
+      required:
+        - title
+        - description
+        - price
+        - image
+      properties:
+        title:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+        image:
+          type: string
+    CreateUserResponse:
+      type: object
+      properties:
+        email:
+          type: string
+        name:
+          type: string
+        _id:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+    CreateUserInput:
+      type: object
+      required:
+        - email
+        - name
+        - password
+        - passwordConfirmation
+      properties:
+        email:
+          type: string
+          default: jane.doe@example.com
+        name:
+          type: string
+          default: Jane Doe
+        password:
+          type: number
+          default: password123
+        passwordConfirmation:
+          type: string
+          default: password123
+
+        
+
+
+
+
+    
