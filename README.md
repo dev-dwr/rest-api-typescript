@@ -32,6 +32,7 @@ docker run --name mongodb -p 27017:27017 -d mongo
 * JWT & refresh tokens
 * Request validation by using middleware
 * Testing API(Middleware, Controller, Service) with Supertest and Mongodb-memory-server
+* Storing authentication credentials inside cookies instead local storage.
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
