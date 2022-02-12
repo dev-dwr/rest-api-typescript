@@ -10,6 +10,7 @@ This is sample of TypeScript REST API with JWT Authentication.
 * Jest - JS testing framework maintained  by Facebook
 * Supertest - library for testing http
 * Google oAuth2 - Google SSO with oAuth2 protocol
+
 ## Technologies Frontend
 * Next.js - enables React application Server Side Rendering functionalities, which put big emphasize on website performance
 * Axios - promised based http client 
@@ -25,8 +26,8 @@ And the UI will be always fast and reactive.
 docker run --name mongodb -p 27017:27017 -d mongo
 ```
 2. Package manager such as NPM or Yarn
-
 3. NodeJS version 14 and higher 
+
 ## Used Concepts
 * REST API principals (CRUD and HTTP methods)
 * JWT & refresh tokens

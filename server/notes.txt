@@ -4,12 +4,13 @@
 4. in package.json add scripts depend and dev script
 5. add tsconfig.ts file: npx tsc --init 
 6. in tsconfig.ts add in "compilerOptions" property of "outDir": "build"
-
 7.Testing: yarn add supertest jest ts-jest @types/jest @types/supertest -D
 8. Initialize jest config file: yarn ts-jest config:init
 9. add mongo db memory server yarn add mongodb-memory-server
 10. add cookie parser yarn add cookie-parser, yarn add @types/cookie-parser -D(development dependency)
 
+11. Adding prometheus: yarn add prom-client(gathering metrics) yarn add response-time(express middleware to gather response time for each request)
+because ts we need to add yarn add @types/response-time -D (development dependency)
 async functions returns Promise<givenType> always
 
 
