@@ -2,6 +2,7 @@ import type { GetServerSideProps, NextPage } from "next";
 import useSWR from "swr";
 import styles from "../styles/Home.module.css";
 import fetcher from "../utils/fetcher";
+import getGoogleOAuthURL from "../utils/getGoogleURL";
 
 interface User {
   _id: string;
@@ -24,7 +25,9 @@ const Home: NextPage<{fallbackData: User}> = ({ fallbackData }) => {
   if (data) {
     return <div>Welcome you are logged in {data.name}</div>;
   }
-  return <div className={styles.container}>Please Login</div>;
+  return <div className={styles.container}>Please Login
+  <a href={getGoogleOAuthURL()}>Google Log in</a>
+  </div>;
 };
 
 

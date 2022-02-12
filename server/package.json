@@ -6,6 +6,7 @@
   "author": "dev dwr",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.25.0",
     "bcrypt": "^5.0.1",
     "config": "^3.3.7",
     "cookie-parser": "^1.4.6",

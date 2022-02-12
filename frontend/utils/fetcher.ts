@@ -1,9 +1,16 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 
-const fetcher = <T>(url: string, headers = {}): Promise<T> =>
-  axios.get<T>(url, { headers, withCredentials: true }).then((res) => {
-    return res.data;
-  });
+const fetcher = async  <T>(url: string, headers = {}): Promise<T | null>  => {
+  try {
+    const { data } = await axios.get<T>(url, {
+      headers,
+      withCredentials: true,
+    });
 
+    return data;
+  } catch (err: any) {
+    return null;
+  }
+};
 
 export default fetcher;
